@@ -1,4 +1,4 @@
-import { formatNaira, itemOf, MAX_QUANTITY, priceValue, type BagLine } from "./bag";
+import { formatEGP, itemOf, MAX_QUANTITY, priceValue, type BagLine } from "./bag";
 import { BACKGROUND } from "./constants";
 
 type BagItemProps = { line: BagLine; onQuantity: (quantity: number) => void };
@@ -23,7 +23,7 @@ export default function BagItem({ line, onQuantity }: BagItemProps) {
             <p className="truncate font-bold">{garment.name}</p>
             <p className="text-sm text-stone-500">{line.size === "One size" ? line.size : `Size ${line.size}`}</p>
           </div>
-          <p className="font-mono text-sm font-bold">{formatNaira(priceValue(garment.price) * line.quantity)}</p>
+          <p className="font-mono text-sm font-bold">{formatEGP(priceValue(garment.price) * line.quantity)}</p>
         </div>
         <div className="mt-auto flex items-center justify-between">
           <div className="flex items-center gap-1 rounded-full border border-stone-900/15" role="group" aria-label={`Quantity of ${garment.name}, size ${line.size}`}>

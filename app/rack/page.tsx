@@ -2,8 +2,8 @@ import type { Metadata, Viewport } from "next";
 import RackClient from "@/components/rack/RackClient";
 
 export const metadata: Metadata = {
-  title: "Rick’s Closet",
-  description: "Shop at Rick’s Closet.",
+  title: "Clothes · ELZOGHBY STORE",
+  description: "Shop clothes at ELZOGHBY STORE.",
 };
 
 export const viewport: Viewport = {

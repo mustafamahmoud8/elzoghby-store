@@ -25,7 +25,7 @@ export default function WelcomeCard() {
           <span className="block text-sm font-extrabold tracking-[0.4em]">ELZOGHBY</span>
           <span className="mt-1 block font-serif text-6xl font-bold italic">Store</span>
         </h1>
-        <p className="mt-4 max-w-sm text-sm text-stone-600">Clothes off the rack, shoes off the wall, watches from the box. Pick a room.</p>
+        <p className="mt-4 max-w-sm text-sm text-stone-600">ملابس راقية، أحذية فاخرة، وساعات فريدة — اختر قسمك.</p>
       </header>
 
       <nav aria-label="Rooms" className="mt-10 w-full max-w-3xl rounded-3xl bg-white p-3 shadow-xl sm:p-4">

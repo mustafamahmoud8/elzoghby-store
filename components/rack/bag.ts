@@ -3,7 +3,7 @@ import { WATCHES } from "../accessories/watches";
 import { SHOES } from "../shoes/shoes";
 import { SHIRTS } from "./shirts";
 
-const STORAGE_KEY = "ricks-closet-bag";
+const STORAGE_KEY = "elzoghby-store-bag";
 export const MAX_QUANTITY = 9;
 
 export type BagLine = { id: string; size: string; quantity: number; image?: string };
@@ -14,8 +14,8 @@ export function priceValue(price: string) {
   return Number(price.replace(/[^\d.]/g, "")) || 0;
 }
 
-const naira = new Intl.NumberFormat("en-NG", { style: "currency", currency: "NGN", maximumFractionDigits: 0 });
-export const formatNaira = (value: number) => naira.format(value);
+const egp = new Intl.NumberFormat("ar-EG", { style: "currency", currency: "EGP", maximumFractionDigits: 0 });
+export const formatEGP = (value: number) => egp.format(value);
 
 export function itemOf(line: BagLine): BagItemInfo | undefined {
   const shirt = SHIRTS.find((s) => s.id === line.id);

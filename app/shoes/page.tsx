@@ -3,8 +3,8 @@ import ShoesClient from "@/components/shoes/ShoesClient";
 import { BACKGROUND } from "@/components/rack/constants";
 
 export const metadata: Metadata = {
-  title: "Shoes · Rick’s Closet",
-  description: "Shop shoes at Rick’s Closet.",
+  title: "Shoes · ELZOGHBY STORE",
+  description: "Shop shoes at ELZOGHBY STORE.",
 };
 
 export const viewport: Viewport = {

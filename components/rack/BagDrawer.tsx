@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import { HoverIcon, ICONS, SPRING } from "../ui/hover";
-import { formatNaira, type Bag } from "./bag";
+import { formatEGP, type Bag } from "./bag";
 import BagItem from "./BagItem";
 import { SIGN_INK, SIGN_PAPER } from "./constants";
 
@@ -12,6 +13,8 @@ type BagDrawerProps = { bag: Bag; onClose: () => void };
 export default function BagDrawer({ bag, onClose }: BagDrawerProps) {
   const dialog = useRef<HTMLDialogElement>(null);
   const [confirmClear, setConfirmClear] = useState(false);
+  const router = useRouter();
+
   useEffect(() => {
     if (!confirmClear) return;
     const timer = window.setTimeout(() => setConfirmClear(false), CONFIRM_MS);
@@ -58,8 +61,8 @@ export default function BagDrawer({ bag, onClose }: BagDrawerProps) {
           {/* eslint-disable-next-line @next/next/no-img-element -- small logo */}
           <img src="/logo/hanger.png" alt="" className="size-9" />
           <div id="bag-title" className="leading-none">
-            <span className="block text-[11px] font-extrabold tracking-[0.32em]">RICK’S</span>
-            <span className="font-serif text-2xl font-bold italic">Closet</span>
+            <span className="block text-[11px] font-extrabold tracking-[0.32em]">ELZOGHBY</span>
+            <span className="font-serif text-2xl font-bold italic">Store</span>
             <span className="sr-only">, your bag</span>
           </div>
           <span className="ml-auto text-xs font-bold tracking-[0.2em] uppercase opacity-70">Bag</span>
@@ -111,11 +114,12 @@ export default function BagDrawer({ bag, onClose }: BagDrawerProps) {
           )}
           <div className="flex items-baseline justify-between">
             <span className="text-sm text-stone-500">Subtotal</span>
-            <span className="font-mono text-lg font-bold">{formatNaira(bag.subtotal)}</span>
+            <span className="font-mono text-lg font-bold">{formatEGP(bag.subtotal)}</span>
           </div>
           <button
             type="button"
             disabled={bag.lines.length === 0}
+            onClick={() => { close(); router.push("/checkout"); }}
             className={`mt-4 flex w-full items-center justify-center rounded-full bg-stone-900 py-3 text-sm font-bold text-white ${SPRING} hover:bg-stone-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-stone-900 disabled:cursor-not-allowed disabled:bg-stone-900/25`}
           >
             <HoverIcon>{ICONS.arrow}</HoverIcon>
