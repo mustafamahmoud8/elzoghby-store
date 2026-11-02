@@ -34,7 +34,7 @@ export default function CheckoutClient() {
     const errs: Partial<typeof form> = {};
     if (!form.name.trim()) errs.name = "الاسم مطلوب";
     if (!/^(010|011|012|015)\d{8}$/.test(form.phone.replace(/\s/g, "")))
-      errs.phone = "رقم هاتف مصري غير صحيح (مثال: 01093421310)";
+      errs.phone = "رقم هاتف مصري غير صحيح (مثال: 01012345678)";
     if (!form.address.trim()) errs.address = "العنوان مطلوب";
     if (!form.city.trim()) errs.city = "المدينة مطلوبة";
     setErrors(errs);
@@ -94,7 +94,7 @@ export default function CheckoutClient() {
                   type="text"
                   value={form.name}
                   error={errors.name}
-                  placeholder="مصطفى محمود"
+                  placeholder="أدخل اسمك الكامل"
                   onChange={(v) => setForm((f) => ({ ...f, name: v }))}
                 />
                 <Field
@@ -102,7 +102,7 @@ export default function CheckoutClient() {
                   type="tel"
                   value={form.phone}
                   error={errors.phone}
-                  placeholder="01093421310"
+                  placeholder="01xxxxxxxxx"
                   onChange={(v) => setForm((f) => ({ ...f, phone: v }))}
                 />
                 <Field

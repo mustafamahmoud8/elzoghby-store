@@ -215,19 +215,12 @@ export function drawLockup(ctx: CanvasRenderingContext2D, cx: number, top: numbe
   ctx.save();
   ctx.fillStyle = color;
   ctx.textBaseline = "alphabetic";
-  const capitals = 64 * scale;
-  ctx.font = `800 ${capitals}px ${pageSans()}`;
-  const letters = [..."RICK’S"];
-  const tracking = 0.4 * capitals;
-  const span = letters.reduce((sum, ch) => sum + ctx.measureText(ch).width, 0) + tracking * (letters.length - 1);
-  let x = cx - span / 2;
-  for (const ch of letters) {
-    ctx.fillText(ch, x, top + 100 * scale);
-    x += ctx.measureText(ch).width + tracking;
-  }
-  ctx.font = `italic 700 ${250 * scale}px ui-serif, Georgia, Cambria, "Times New Roman", Times, serif`;
   ctx.textAlign = "center";
-  ctx.fillText("Closet", cx, top + 360 * scale);
+  const capitals = 58 * scale;
+  ctx.font = `800 ${capitals}px ${pageSans()}`;
+  ctx.fillText("ELZOGHBY", cx, top + 110 * scale);
+  ctx.font = `italic 700 ${220 * scale}px ui-serif, Georgia, Cambria, "Times New Roman", Times, serif`;
+  ctx.fillText("Store", cx, top + 350 * scale);
   ctx.restore();
 }
 
